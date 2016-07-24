@@ -1,0 +1,22 @@
+the original kjv.xml that was the original source of kjv.json was found at
+
+    https://code.google.com/archive/p/sspc-website/source/default/source?page=5
+    under the entry: sspc-website/trunk/include/bibles/kjv.xml
+
+the xml was converted to json via this python module:
+
+    https://pypi.python.org/pypi/xmljson
+
+using the BadgerFish convention.
+
+the @name keys were converted to number using this regular expression:
+
+    ("@name")(: [0-9]+,$)
+
+and replaced with
+    
+    "number"\2
+
+the "$" keys were replaced with "text"
+
+all subsequent changes are tracked via version control.
